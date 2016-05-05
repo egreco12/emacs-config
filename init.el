@@ -27,6 +27,7 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
+
 ;; The packages you want installed. You can also install these
 ;; manually with M-x package-install
 ;; Add in your own as you wish:
@@ -59,6 +60,9 @@
     ;; project navigation
     projectile
 
+    ;; file tree
+    neotree
+
     ;; colorful parenthesis matching
     rainbow-delimiters
 
@@ -66,7 +70,11 @@
     tagedit
 
     ;; git integration
-    magit))
+    magit
+
+    ;; For window moving
+    windmove
+    ))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -101,6 +109,18 @@
 ;;;;
 ;; Customization
 ;;;;
+
+;; Swap buffers with neighboring buffers
+(global-set-key (kbd "<C-S-up>")     'buf-move-up)
+(global-set-key (kbd "<C-S-down>")   'buf-move-down)
+(global-set-key (kbd "<C-S-left>")   'buf-move-left)
+(global-set-key (kbd "<C-S-right>")  'buf-move-right)
+
+;; Use wind move to move to new window
+(global-set-key (kbd "C-c <left>")  'windmove-left)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
+(global-set-key (kbd "C-c <up>")    'windmove-up)
+(global-set-key (kbd "C-c <down>")  'windmove-down)
 
 ;; Add a directory to our load path so that when you `load` things
 ;; below, Emacs knows where to look for the corresponding file.
