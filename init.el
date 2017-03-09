@@ -60,9 +60,6 @@
     ;; project navigation
     projectile
 
-    ;; file tree
-    neotree
-
     ;; colorful parenthesis matching
     rainbow-delimiters
 
@@ -74,6 +71,9 @@
 
     ;; For window moving
     windmove
+
+    ;; why is this not in by default?
+    json-mode
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user
@@ -100,7 +100,7 @@
 ;;
 ;; (require 'yaml-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-;; 
+;;
 ;; Adding this code will make Emacs enter yaml mode whenever you open
 ;; a .yml file
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -146,6 +146,8 @@
 
 ;; For editing lisps
 (load "elisp-editing.el")
+
+(load "whitespace.el")
 
 ;; Langauage-specific
 (load "setup-clojure.el")
