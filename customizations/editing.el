@@ -16,8 +16,9 @@
 (show-paren-mode 1)
 
 ;; Highlight current line
-(global-hl-line-mode 1)
-
+(global-hl-line-mode 0)
+;; make cursor be a block
+(setq-default cursor-type 'block)
 ;; Interactive search key bindings. By default, C-s runs
 ;; isearch-forward, so this swaps the bindings.
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
